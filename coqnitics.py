@@ -15,4 +15,4 @@ def requestAPI(id):
   filename = {'filename': open(file,'rb')}
   r = requests.post(url, files = filename, data=data)
   content = json.loads(r.content)
-  print(content)
+  return content
