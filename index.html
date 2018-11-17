@@ -59,9 +59,9 @@
   	<div class="collapse navbar-collapse" id="navbarSupportedContent">
     	<ul class="navbar-nav mr-auto"></ul>
 	<div class="input-group mb-3" style="width: 30%; height: 20%">
-  		<input type="text" class="form-control" placeholder="Search start with '#'..." aria-label="Search" aria-describedby="button-addon2">
+  		<input type="text" class="form-control" placeholder="Search start with '#'..." aria-label="Search" aria-describedby="button-addon2" name="search">
   		<div class="input-group-append">
-    		<button class="btn btn-outline-secondary bg-light" type="button" id="button-addon2">Search</button>
+    		<button class="btn btn-outline-secondary bg-light" type="submit" id="button-addon2">Search</button>
   		</div>
 	</div>
 	</div>
@@ -71,20 +71,21 @@
 <div class="wrapper">
 			<div id="sidebar">
 			<center><h5>Filter</h5></center>
+      <form action="" method="POST">
   			<label>Gender:</label>
   			<br>
-  			<input type="radio" name="sex" id="sex" value="male" style="width: 5%; margin-right: 2%">Male
-  			<input type="radio" name="sex" id="sex" value="female" style="width: 5%; margin-left: 10%; margin-right: 2%">Female
+  			<input type="radio" name="sex" id="idsex" value="male" style="width: 5%; margin-right: 2%">Male
+  			<input type="radio" name="sex" id="idsex" value="female" style="width: 5%; margin-left: 10%; margin-right: 2%">Female
   			<br>
   			<br>
   			<label>Age:</label>
   			<br>
-  			<input type="checkbox" name="agegroup1" id="idage" value="">1-10 years old<br>
-  			<input type="checkbox" name="agegroup1" id="idage" value="">11-20 years old<br>
-  			<input type="checkbox" name="agegroup1" id="idage" value="">21-30 years old<br>
-  			<input type="checkbox" name="agegroup1" id="idage" value="">31-40 years old<br>
-  			<input type="checkbox" name="agegroup1" id="idage" value="">41-50 years old<br>
-  			<input type="checkbox" name="agegroup1" id="idage" value="">more than 50 years old
+  			<input type="checkbox" name="agegroup" id="idage" value="agegroup1">1-10 years old<br>
+  			<input type="checkbox" name="agegroup" id="idage" value="agegroup2">11-20 years old<br>
+  			<input type="checkbox" name="agegroup" id="idage" value="agegroup3">21-30 years old<br>
+  			<input type="checkbox" name="agegroup" id="idage" value="agegroup4">31-40 years old<br>
+  			<input type="checkbox" name="agegroup" id="idage" value="agegroup5">41-50 years old<br>
+  			<input type="checkbox" name="agegroup" id="idage" value="agegroup6">more than 50 years old
   			<br>
   			<br>
   			<label>Style:</label>
@@ -101,8 +102,9 @@
   			<input type="checkbox" name="Denim" value="1">Denim<br>
   			<input type="checkbox" name="Outdoor" value="1">Outdoor<br>
   			<input type="checkbox" name="90s" value="1">90s<br>   
-  			<center><a href="#" class="btn btn-primary">Filter</a></center>			
+  			<center><button type="submit" class="btn btn-primary">Filter</button></center>			
   			</div>
+      </form>
 
 <div class="wrapper">
   		<div id="main">
