@@ -49,7 +49,7 @@ def getBestGarments(parent, number):
         
     confidence.sort(reverse=True)
 
-     resultGarment = []
+    resultGarment = []
 
      # COMPARE WITH ORIGINAL JSON
     for i in range(0, len(confidence)):
@@ -58,3 +58,23 @@ def getBestGarments(parent, number):
                    resultGarment.append(parent[j]['typeName'])
 
     return resultGarment
+
+def prepareData(colors, styles, garments):
+     data_insert = []
+     for i in range (0,3):
+          try:
+               data_insert.append(colors[i])
+          except IndexError:
+               data_insert.append('')
+     for i in range (0,3):
+          try:
+               data_insert.append(styles[i])
+          except IndexError:
+               data_insert.append('')
+     for i in range (0,1):
+          try:
+               data_insert.append(garments[i])
+          except IndexError:
+               data_insert.append('')
+     
+     return data_insert
