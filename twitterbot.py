@@ -18,12 +18,10 @@ csvWriter = csv.writer(csvFile)
 for tweet in tweepy.Cursor(api.search,q="#ootd",count=100,
                            include_entities=True,
                            lang="en",
-                           since="2018-11-13").items():
+                           since="2018-11-01").items():
 
     if 'media' in tweet.entities:
-        for image in tweet.entities['media']:
-            if tweet.favorite_count > 50:
-                print(image['media_url'])
-                print(image['url'])
- 
-    # csvWriter.writerow([tweet.created_at, tweet.text.encode('utf-8')])
+        for image in  tweet.entities['media']:
+            favs = tweet.favorite_count
+            if favs > 30:
+                csvWriter.writerow([favs, image['media_url']])
