@@ -5,7 +5,7 @@ import requests
 from io import BytesIO
 import urllib.request
 import function
-# from db import mydb
+from db import mydb
 
 reader = csv.reader(open('data.csv', newline=''), delimiter=',')
 count = 0
