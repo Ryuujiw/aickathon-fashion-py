@@ -13,3 +13,4 @@ for row in reader:
         fav_count = row[0]
         urllib.request.urlretrieve(row[1], '{}{}{}'.format('tmp/train', count,'.jpg'))
         coqnitics.requestAPI(count)
+        created_at = row[2]
