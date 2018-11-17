@@ -5,7 +5,7 @@ import requests
 from io import BytesIO
 import urllib.request
 import function
-from db import mydb
+# from db import mydb
 
 reader = csv.reader(open('data.csv', newline=''), delimiter=',')
 count = 0
@@ -22,15 +22,12 @@ for row in reader:
         styles = function.getBestStyles(result['person']['styles'], 3) # for styles
         confidence = function.getBestGarments(result['person']['garments'], 1)
 
-        # print(colors)
-        # print(styles)
-        # print(confidence)
-        # preparedData = function.prepareData(colors, styles, confidence)
+        preparedData = function.prepareData(colors, styles, confidence)
 
         mycursor = mydb.cursor()
         sql = "INSERT INTO tbl_clothe (Colour1, Colour2, Colour3, Style1, Style2, Style3, Garment) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-        # val= (preparedData)
-        # mycursor.execute(sql, val)
+        val= (preparedData)
+        mycursor.execute(sql, val)
             
-        # mydb.commit()
-        # print(mycursor.rowcount, val)
+        mydb.commit()
+        print(mycursor.rowcount, val)

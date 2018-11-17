@@ -10,16 +10,12 @@ def getBestColours(parent, number):
 
     ratio = ratio[:number]
 
-    print(ratio)
-
     resultColor = []
 
      # COMPARE WITH ORIGINAL JSON
     for i in range(0, len(ratio)):
          for j in range(0, len(parent)):
-              if(ratio[i] == parent[j]):
-                    print(parent[j]['colorGeneralCategory'])
-                    print('----')
+              if(ratio[i] == parent[j]['ratio']):
                     resultColor.append(parent[j]['colorGeneralCategory'])
                     # print(resultColor)
 
@@ -42,7 +38,7 @@ def getBestStyles(parent, number):
      # COMPARE WITH ORIGINAL JSON
     for i in range(0, len(confidence)):
          for j in range(0, len(parent)):
-              if(confidence[i] == parent[j]):
+              if(confidence[i] == parent[j]['confidence']):
                    resultStyles.append(parent[j]['styleName'])
 
     return resultStyles
@@ -66,7 +62,7 @@ def getBestGarments(parent, number):
      # COMPARE WITH ORIGINAL JSON
     for i in range(0, len(confidence)):
          for j in range(0, len(parent)):
-              if(confidence[i] == parent[j]):
+              if(confidence[i] == parent[j]['confidence']):
                    resultGarment.append(parent[j]['typeName'])
 
     return resultGarment
